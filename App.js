@@ -1,11 +1,11 @@
-import { StatusBar } from "expo-status-bar";
+import { NativeBaseProvider, Box } from "native-base";
 import { StyleSheet, Text, View } from "react-native";
-import Home from "./screens/Home";
+import Nav from "./navigation/Nav";
 
 export default function App() {
   return (
     <NativeBaseProvider>
-      <Box>Hello world</Box>
+      <Nav />
     </NativeBaseProvider>
   );
 }
