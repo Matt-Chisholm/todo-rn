@@ -35,7 +35,7 @@ const Home = ({ navigation }) => {
     <View style={styles.container}>
       <Container style={styles.contentContainer}>
         <Heading style={styles.text}>{currentTime}</Heading>
-        <Heading style={styles.text}>{greeting}</Heading>
+        <Heading style={styles.header}>{greeting}!</Heading>
         <Text style={styles.text}>Start managing your tasks effortlessly!</Text>
         <Button block onPress={handleStart}>
           <Text style={styles.buttonText}>Start</Text>
@@ -61,6 +61,13 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     textAlign: "center",
     color: "white",
+  },
+  header: {
+    marginBottom: 80,
+    paddingTop: 100,
+    textAlign: "center",
+    color: "white",
+    fontSize: 40,
   },
   buttonText: {
     color: "white",
