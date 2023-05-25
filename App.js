@@ -4,6 +4,39 @@ import Nav from "./navigation/Nav";
 
 export default function App() {
   const theme = extendTheme({
+    fontConfig: {
+      Roboto: {
+        100: {
+          normal: "Roboto-Thin",
+        },
+        200: {
+          normal: "Roboto-Light",
+        },
+        300: {
+          normal: "Roboto-Light",
+        },
+        400: {
+          normal: "Roboto-Regular",
+        },
+        500: {
+          normal: "Roboto-Medium",
+        },
+        600: {
+          normal: "Roboto-Medium",
+        },
+        700: {
+          normal: "Roboto-Bold",
+        },
+        800: {
+          normal: "Roboto-BoldItalic",
+        },
+      },
+    },
+    fonts: {
+      heading: "Roboto",
+      body: "Roboto",
+      mono: "Roboto",
+    },
     colors: {
       primary: {
         500: "#00BCD4", // Blue
