@@ -1,42 +1,25 @@
 import { NativeBaseProvider, extendTheme } from "native-base";
 import { StyleSheet, Text, View } from "react-native";
+import { useEffect } from "react";
 import Nav from "./navigation/Nav";
+import * as Font from "expo-font";
 
 export default function App() {
+  useEffect(() => {
+    const loadFonts = async () => {
+      await Font.loadAsync({
+        "Roboto-Thin": require("./assets/fonts/Roboto-Thin.ttf"),
+        "Roboto-Light": require("./assets/fonts/Roboto-Light.ttf"),
+        "Roboto-Medium": require("./assets/fonts/Roboto-Medium.ttf"),
+        "Roboto-Bold": require("./assets/fonts/Roboto-Bold.ttf"),
+        "Roboto-BoldItalic": require("./assets/fonts/Roboto-BoldItalic.ttf"),
+      });
+    };
+
+    loadFonts();
+  }, []);
+
   const theme = extendTheme({
-    fontConfig: {
-      Roboto: {
-        100: {
-          normal: "Roboto-Thin",
-        },
-        200: {
-          normal: "Roboto-Light",
-        },
-        300: {
-          normal: "Roboto-Light",
-        },
-        400: {
-          normal: "Roboto-Regular",
-        },
-        500: {
-          normal: "Roboto-Medium",
-        },
-        600: {
-          normal: "Roboto-Medium",
-        },
-        700: {
-          normal: "Roboto-Bold",
-        },
-        800: {
-          normal: "Roboto-BoldItalic",
-        },
-      },
-    },
-    fonts: {
-      heading: "Roboto",
-      body: "Roboto",
-      mono: "Roboto",
-    },
     colors: {
       primary: {
         500: "#00BCD4", // Blue
