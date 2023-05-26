@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, Button, Text, Heading } from "native-base";
+import { Container, Button, Text, Heading, Box, Image } from "native-base";
 import { StyleSheet, View } from "react-native";
 
 const Home = ({ navigation }) => {
@@ -34,9 +34,19 @@ const Home = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Container style={styles.contentContainer}>
-        <Heading style={styles.text}>{currentTime}</Heading>
-        <Heading style={styles.header}>{greeting}!</Heading>
-        <Text style={styles.text}>Start managing your tasks effortlessly!</Text>
+        <Image
+          source={require("../assets/drone.gif")}
+          alt='Drone'
+          width={400}
+          height={400}
+          resizeMode='contain'
+          style={{ marginBottom: 20 }}
+        />
+        <Box style={{ marginBottom: 20 }}>
+          <Heading style={styles.text}>{currentTime}</Heading>
+          <Heading style={styles.header}>{greeting}!</Heading>
+        </Box>
+        <Text style={styles.subheader}>Manage your tasks</Text>
         <Button block onPress={handleStart}>
           <Text style={styles.buttonText}>Start</Text>
         </Button>
@@ -58,16 +68,23 @@ const styles = StyleSheet.create({
     backgroundColor: "#333333", // Dark Grey Background Color
   },
   text: {
-    marginBottom: 20,
+    marginBottom: 0,
     textAlign: "center",
     color: "white",
   },
   header: {
-    marginBottom: 80,
-    paddingTop: 100,
+    paddingTop: 20,
     textAlign: "center",
-    color: "white",
+    color: "whitesmoke",
     fontSize: 40,
+  },
+  subheader: {
+    paddingTop: 50,
+    paddingBottom: 20,
+    textTransform: "uppercase",
+    color: "whitesmoke",
+    fontSize: 30,
+    lineHeight: 30,
   },
   buttonText: {
     color: "white",
