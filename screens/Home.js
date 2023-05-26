@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
   contentContainer: {
     width: "100%",
     paddingHorizontal: 20,
-    marginBottom: 200,
+    marginBottom: 240,
     backgroundColor: "#333333", // Dark Grey Background Color
   },
   bottomContainer: {
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     paddingBottom: 40,
-    paddingTop: 40,
+    paddingTop: 60,
     paddingHorizontal: 20,
     backgroundColor: "whitesmoke", // Dark Grey Background Color
   },
