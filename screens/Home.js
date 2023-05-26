@@ -54,10 +54,10 @@ const Home = ({ navigation }) => {
         <Divider
           style={{ backgroundColor: "white", marginBottom: 20, marginTop: -80 }}
         />
-        <Box style={{ marginBottom: 20 }}>
-          <Heading style={styles.text}>{currentTime}</Heading>
-          <Heading style={styles.header}>{greeting}!</Heading>
-        </Box>
+      </Container>
+      <View style={styles.bottomContainer}>
+        <Heading style={styles.text}>{currentTime}</Heading>
+        <Heading style={styles.header}>{greeting}!</Heading>
         <Text style={styles.subheader}>Manage your tasks</Text>
         <Button
           size='lg'
@@ -65,7 +65,7 @@ const Home = ({ navigation }) => {
           _text={{ color: "white", fontWeight: "bold" }}>
           <Text fontSize='xl'>Get Started</Text>
         </Button>
-      </Container>
+      </View>
     </View>
   );
 };
@@ -80,15 +80,29 @@ const styles = StyleSheet.create({
   contentContainer: {
     width: "100%",
     paddingHorizontal: 20,
+    marginBottom: 200,
     backgroundColor: "#333333", // Dark Grey Background Color
+  },
+  bottomContainer: {
+    width: "100%",
+    borderRadius: 20,
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    right: 0,
+    paddingBottom: 40,
+    paddingTop: 40,
+    paddingHorizontal: 20,
+    backgroundColor: "whitesmoke", // Dark Grey Background Color
   },
   text: {
     marginBottom: 0,
     textAlign: "center",
-    color: "white",
+    color: "black",
   },
   header: {
     paddingTop: 20,
+    fontFamily: "Roboto-Black",
     textAlign: "left",
     color: "lightblue",
     fontSize: 60,
@@ -98,8 +112,9 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     paddingBottom: 20,
     textTransform: "uppercase",
-    color: "whitesmoke",
+    color: "black",
     fontSize: 30,
+    fontFamily: "Roboto-Light",
     lineHeight: 30,
   },
   buttonText: {
