@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { View, Text, SafeAreaView } from "react-native";
 import React, { useState } from "react";
 import {
   CalendarList,
@@ -13,7 +13,7 @@ export default function Todos() {
   const currentDate = new Date();
 
   return (
-    <View
+    <SafeAreaView
       style={{
         flex: 1,
         justifyContent: "center",
@@ -23,7 +23,7 @@ export default function Todos() {
         onDayPress={(day) => {
           setSelected(day.dateString);
         }}
-        style={{ height: 500, width: 500, borderWidth: 1, borderColor: "gray" }}
+        style={{ height: 330, width: 500, borderWidth: 1, borderColor: "gray" }}
         current={currentDate}
         markedDates={{
           [selected]: {
@@ -33,6 +33,13 @@ export default function Todos() {
           },
         }}
       />
-    </View>
+      <Agenda
+        selected={selected}
+        style={{
+          height: 500,
+          width: 500,
+        }}
+      />
+    </SafeAreaView>
   );
 }
