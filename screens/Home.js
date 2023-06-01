@@ -61,6 +61,7 @@ const Home = ({ navigation }) => {
         <Text style={styles.subheader}>Manage your tasks</Text>
         <Button
           size='lg'
+          onPress={handleStart}
           colorScheme='primary'
           _text={{ color: "white", fontWeight: "bold" }}>
           <Text fontSize='xl'>Get Started</Text>
