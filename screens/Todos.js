@@ -1,4 +1,5 @@
 import { View, Text, SafeAreaView } from "react-native";
+import { Button, Heading, Box } from "native-base";
 import React, { useState } from "react";
 import {
   CalendarList,
@@ -11,6 +12,10 @@ export default function Todos() {
   const [selected, setSelected] = useState("");
 
   const currentDate = new Date();
+
+  const addNewEvent = () => {
+    // Add new event to the calendar
+  };
 
   const events = {
     // Sample event for the selected date
@@ -67,6 +72,27 @@ export default function Todos() {
           );
         }}
       />
+      <Button
+        size='lg'
+        onPress={addNewEvent}
+        colorScheme='primary'
+        style={{
+          marginBottom: 2,
+          width: "80%",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+        _text={{ color: "white", fontWeight: "bold" }}>
+        <Text
+          fontSize='xl'
+          style={{
+            color: "white",
+            fontWeight: "bold",
+            fontSize: 20,
+          }}>
+          Add New Event
+        </Text>
+      </Button>
     </SafeAreaView>
   );
 }
