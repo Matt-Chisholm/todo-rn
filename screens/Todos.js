@@ -12,6 +12,15 @@ export default function Todos() {
 
   const currentDate = new Date();
 
+  const events = {
+    // Sample event for the selected date
+    [selected]: [
+      { name: "Meeting", time: "10:00 AM" },
+      { name: "Lunch", time: "1:00 PM" },
+      { name: "Workout", time: "5:00 PM" },
+    ],
+  };
+
   return (
     <SafeAreaView
       style={{
@@ -38,6 +47,24 @@ export default function Todos() {
         style={{
           height: 500,
           width: 500,
+        }}
+        items={events}
+        renderItem={(item) => {
+          return (
+            <View
+              style={{
+                backgroundColor: "white",
+                borderRadius: 5,
+                padding: 10,
+                marginRight: 10,
+                marginTop: 17,
+              }}>
+              <Text style={{ fontSize: 20, fontWeight: "bold" }}>
+                {item.name}
+              </Text>
+              <Text style={{ fontSize: 15 }}>{item.time}</Text>
+            </View>
+          );
         }}
       />
     </SafeAreaView>
